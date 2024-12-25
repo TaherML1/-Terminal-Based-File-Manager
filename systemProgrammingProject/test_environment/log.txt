@@ -1,0 +1,16 @@
+[INFO] Wed Dec 25 20:30:15 2024
+ Directory listed successfully
+[ERROR] Wed Dec 25 21:10:27 2024
+ Failed to open source file
+[ERROR] Wed Dec 25 21:10:38 2024
+ Failed to open destination file
+[INFO] Wed Dec 25 21:11:41 2024
+ File removed successfully
+[INFO] Wed Dec 25 21:12:57 2024
+ Directory created successfully
+[INFO] Wed Dec 25 21:13:15 2024
+ Directory created successfully
+[INFO] Wed Dec 25 21:27:45 2024
+ File removed successfully
+[INFO] Wed Dec 25 21:28:41 2024
+ File created successfully
