@@ -1,0 +1,2 @@
+[ERROR] Thu Dec 26 17:25:18 2024
+ Failed to open file for reading

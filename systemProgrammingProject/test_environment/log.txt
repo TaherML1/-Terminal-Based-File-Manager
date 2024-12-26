@@ -16,3 +16,19 @@
  File created successfully
 [INFO] Thu Dec 26 09:15:36 2024
  File created successfully
+[INFO] Thu Dec 26 17:12:17 2024
+ File copied successfully
+[INFO] Thu Dec 26 17:15:53 2024
+ File created successfully
+[INFO] Thu Dec 26 17:16:27 2024
+ Data written to file successfully
+[ERROR] Thu Dec 26 17:17:30 2024
+ Failed to create directory
+[INFO] Thu Dec 26 17:19:20 2024
+ Directory created successfully
+[ERROR] Thu Dec 26 17:20:38 2024
+ Failed to open destination file
+[INFO] Thu Dec 26 17:21:48 2024
+ File copied successfully
+[INFO] Thu Dec 26 17:23:44 2024
+ Directory contents listed successfully
