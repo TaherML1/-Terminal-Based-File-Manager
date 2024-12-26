@@ -14,6 +14,13 @@ void print_usage() {
     printf("screate <directory>\n");
     printf("screatefile <filename>\n");
     printf("schmod <file/directory> <permissions>\n");
+    printf("swrite <filename> <data>\n");
+    printf("sread <filename>\n");
+    printf("sopen <directory>\n");
+    printf("slistdir <directory>\n");
+    printf("sinfo <filename>\n");
+    printf("sedit <filename>\n");
+    printf("srename <oldname> <newname>\n");
     // Add more commands as needed
 }
 
@@ -59,6 +66,48 @@ int main(int argc, char *argv[]) {
             return 1;
         }
         change_permissions(argv[2], strtol(argv[3], NULL, 8));
+    } else if (strcmp(argv[1], "swrite") == 0) {
+        if (argc != 4) {
+            print_usage();
+            return 1;
+        }
+        write_to_file(argv[2], argv[3]);
+    } else if (strcmp(argv[1], "sread") == 0) {
+        if (argc != 3) {
+            print_usage();
+            return 1;
+        }
+        read_from_file(argv[2]);
+    } else if (strcmp(argv[1], "sopen") == 0) {
+        if (argc != 3) {
+            print_usage();
+            return 1;
+        }
+        open_folder(argv[2]);
+    } else if (strcmp(argv[1], "slistdir") == 0) {
+        if (argc != 3) {
+            print_usage();
+            return 1;
+        }
+        read_folder_content(argv[2]);
+    } else if (strcmp(argv[1], "sinfo") == 0) {
+        if (argc != 3) {
+            print_usage();
+            return 1;
+        }
+        get_file_info(argv[2]);
+    } else if (strcmp(argv[1], "sedit") == 0) {
+        if (argc != 3) {
+            print_usage();
+            return 1;
+        }
+        edit_file(argv[2]);
+    } else if (strcmp(argv[1], "srename") == 0) {
+        if (argc != 4) {
+            print_usage();
+            return 1;
+        }
+        rename_file_or_folder(argv[2], argv[3]);
     } else {
         print_usage();
         return 1;
