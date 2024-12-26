@@ -8,6 +8,9 @@
 #include "permissions.h"
 #include "logger.h"
 
+#define RED "\x1B[31m"
+#define RESET "\x1B[0m"
+
 void print_usage() {
     printf("Usage:\n");
     printf("slist <directory>                List the contents of a directory.\n");
@@ -27,22 +30,29 @@ void print_usage() {
     // Add more commands as needed
 }
 
+void print_welcome_message() {
+    printf("Welcome to the File Manager!\n");
+    printf("Type 'help' to show available commands.\n");
+    printf("Type 'exit' to quit the interactive mode.\n");
+}
+
 void handle_command(char *line) {
     char *argv[10];
     int argc = 0;
     char *token = strtok(line, " ");
-
     while (token != NULL) {
         argv[argc++] = token;
         token = strtok(NULL, " ");
     }
 
-    if (argc < 2) {
+    if (argc < 1) {
         print_usage();
         return;
     }
 
-    if (strcmp(argv[0], "slist") == 0) {
+    if (strcmp(argv[0], "help") == 0) {
+        print_usage();
+    } else if (strcmp(argv[0], "slist") == 0) {
         if (argc != 2) {
             print_usage();
             return;
@@ -123,6 +133,7 @@ void handle_command(char *line) {
     } else if (strcmp(argv[0], "exit") == 0) {
         exit(0);
     } else {
+        printf(RED "Error: Invalid command. Type 'help' for available commands." RESET "\n");
         print_usage();
     }
 }
@@ -132,6 +143,7 @@ int main(int argc, char *argv[]) {
         // Interactive mode
         char *line;
         using_history();
+        print_welcome_message();
         while ((line = readline("file_manager> ")) != NULL) {
             if (*line) {
                 add_history(line);
