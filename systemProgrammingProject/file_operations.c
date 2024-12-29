@@ -122,6 +122,11 @@ void read_folder_content(const char *path) {
     log_info("Directory contents listed successfully");
 }
 
+
+
+
+
+
 void get_file_info(const char *filename) {
     struct stat file_stat;
     if (stat(filename, &file_stat) == -1) {
@@ -144,6 +149,9 @@ void get_file_info(const char *filename) {
     log_info("File information retrieved successfully");
 }
 
+
+
+
 void edit_file(const char *filename) {
     // For simplicity, we'll use `nano` to edit the file.
     // You can replace this with any text editor of your choice.
@@ -152,6 +160,10 @@ void edit_file(const char *filename) {
     system(command);
     log_info("File opened for editing");
 }
+
+
+
+
 
 void rename_file_or_folder(const char *oldname, const char *newname) {
     if (rename(oldname, newname) == -1) {
